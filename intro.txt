@@ -1,0 +1,63 @@
+2.5m
+Frontend
+html, css, bootstrap, js, reactjs (tailwindcss)
+
+html (HyperText markeup language)
+    -> button
+    -> form
+    -> table
+css (cascading style sheet)
+    -> responsiveness
+    -> animation
+    -> etc (other properties)
+bs (bootstrap)
+    -> button
+    -> tables
+    -> form
+js (javascript) :: progamming language
+    -> basic, if else, switches
+    -> loops, array, methods
+
+ReactJs (It is Library) :: ui components based
+    -> components
+    -> props
+    -> children
+    -> layout
+    -> navigations
+    -> statemanagement
+
+6m
+Frontend
+Backend (MernStack)
+    -> php, laravel :: mysql
+    => php
+        -> hypertext pre-processor
+        -> progamming language
+        -> basic, if else, switches
+        -> loops, array, methods
+    => laravel (framework)
+        -> mvc (model, view, controller)
+    -> nodejs :: mongodb
+
+Mern 
+Mongodb             -> database
+Express             -> urls creation
+React (Nextjs)      -> UI creation
+Nodejs              -> Backend logic
+
+Tools:
+    -> Browsers (Google Chrome)
+    -> Editors (Vs code)
+    -> Xampp
+    -> Mongodb compass
+    -> Github
+
+----------------------------
+ATS Resume
+Portfolio
+Linkedin profile
+Git-github
+
+Fiverr / Upwork
+ThemeForest
+Shopify
