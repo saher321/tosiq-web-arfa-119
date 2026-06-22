@@ -45,6 +45,13 @@ Express             -> urls creation
 React (Nextjs)      -> UI creation
 Nodejs              -> Backend logic
 
+6m (Second term)
+Frontend (Reactjs)
+python core
+drf => django rest framework / fastApi
+c# , asp.net
+java
+
 Tools:
     -> Browsers (Google Chrome)
     -> Editors (Vs code)
@@ -61,3 +68,14 @@ Git-github
 Fiverr / Upwork
 ThemeForest
 Shopify
+************************
+Deployement
+    domain name
+        -> namecheap.com
+    hosting server
+        -> Hostinger
+        -> GoDaddy
+        -> DreamHost
+        -> BlueHost
+        -> UtlaHost
+
