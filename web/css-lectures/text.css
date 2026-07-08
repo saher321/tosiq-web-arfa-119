@@ -1,0 +1,21 @@
+h2 {
+    text-decoration: overline;
+    text-decoration-color: red;
+
+    text-shadow: 3px 0px 0px #ecebeb; 
+}
+p {
+    text-align: justify;
+    text-align-last: center;
+    
+    text-decoration: underline;
+    text-decoration-color: seagreen;
+    text-decoration-style: wavy;
+
+    text-transform: capitalize;
+
+    word-spacing: 40px;
+    letter-spacing: 4px;
+
+    border: 1px solid red;
+}
