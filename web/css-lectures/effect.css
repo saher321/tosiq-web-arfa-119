@@ -1,0 +1,29 @@
+button {
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-hover {
+    background-color: #F9E8A2
+}
+
+.btn-hover:hover {
+    background-color: #ecd064
+}
+
+.btn-active {
+    background-color: #FBEFEF
+}
+.btn-active:active {
+    background-color: #f3cccc
+}
+
+.btn-focus {
+    background-color: #E6F2DD
+}
+
+.btn-focus:focus {
+    background-color: #cbf3ac
+}
