@@ -1,0 +1,50 @@
+body {
+    margin: 0px; padding: 0px;
+    font-size: 20px;
+}
+
+.main-wrapper {
+
+    .wrapper-inner {
+        margin: 8px auto;
+        background-color: #5454FF;
+        max-width: 600px;
+        padding: 16px 32px;
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .brand {
+            img {
+                border-radius: 50px;
+            }
+        }
+        .links {
+            nav {
+                ul {
+                    padding: 0px;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    li {
+                        a {
+                            text-decoration: none;
+                            color: white;
+                        }
+                        button {
+                            background-color: white; 
+                            border: none;
+                            padding: 12px 24px;
+                            border-radius: 12px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
