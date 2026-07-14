@@ -1,24 +1,25 @@
 :root {
-    --secondary-txt-clr: #BD4444;
+    --txt-clr: #BD4444;
     --bg-clr: #FFCA95;
     --radius: 4px;
+    --border: 1px solid #BD4444
 }
 
 h2 {
-    color: var(--secondary-txt-clr);
+    color: var(--txt-clr);
     background-color: var(--bg-clr);
     border-radius: var(--radius)
 }
 
 button {
-    color: var(--secondary-txt-clr);
+    color: var(--txt-clr);
     background-color: var(--bg-clr);
     border-radius: var(--radius);
-    border: 1px solid #BD4444
+    border: var(--border)
 }
 
 p {
-    color: var(--secondary-txt-clr);
+    color: var(--txt-clr);
     background-color: var(--bg-clr);
     border-radius: var(--radius)
 }
