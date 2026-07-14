@@ -1,0 +1,24 @@
+:root {
+    --secondary-txt-clr: #BD4444;
+    --bg-clr: #FFCA95;
+    --radius: 4px;
+}
+
+h2 {
+    color: var(--secondary-txt-clr);
+    background-color: var(--bg-clr);
+    border-radius: var(--radius)
+}
+
+button {
+    color: var(--secondary-txt-clr);
+    background-color: var(--bg-clr);
+    border-radius: var(--radius);
+    border: 1px solid #BD4444
+}
+
+p {
+    color: var(--secondary-txt-clr);
+    background-color: var(--bg-clr);
+    border-radius: var(--radius)
+}

@@ -1,2 +1,5 @@
 13 July, 2026 (navbar, display, a tag design)
 	- https://www.youtube.com/watch?v=prxZTieFvY4
+
+14 July, 2026 (css variables)
+	- https://www.youtube.com/watch?v=86GTuw2G4OM
