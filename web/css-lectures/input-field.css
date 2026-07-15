@@ -1,0 +1,36 @@
+body{
+    background-color: #ddd;
+}
+.form-wrapper {
+    margin-bottom: 8px;
+}
+label{
+    display: block;
+}
+
+.input1{
+    border: none;
+    border-bottom: 1px solid seagreen;
+}
+.input1:focus{
+    outline: none;
+    border-bottom: 1px solid seagreen;
+}
+
+.input2{
+    color: red;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #999;
+
+    transition: .5s;
+}
+.input2:focus{
+    outline: none;
+    border: 1px solid seagreen;
+}
+
+.input2::placeholder {
+    color: #999;
+    font-style: italic;
+}

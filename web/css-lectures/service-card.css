@@ -1,0 +1,55 @@
+body{
+    background-color: #D5DBE9;
+    font-family: 'verdana', sans-serif;
+}
+.top-cards, .bottom-cards{
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+}
+.card{
+    background-color: white;
+    width: 240px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.card-body {
+    background-color: #E0F3FF;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.card-body .h{
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card-body .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 16px 0px; 
+}
+
+.tags span {
+    background-color: #C1E9FE;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 12px
+}
+
+.card-footer {
+    margin: 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-footer a {
+    color: black;
+    background-color: #F6F6F6;
+    padding: 4px 8px; 
+    border-radius: 5px;
+}
