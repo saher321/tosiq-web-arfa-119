@@ -1,7 +1,7 @@
 .main {
     border: 3px dashed black;
-    height: 400px;
-
+    width: 300px;
+    height: 300px;
     position: relative;
 }
 ul {
@@ -12,10 +12,7 @@ ul {
     margin: 0px 0px 0px 20px
 }
 .child {
-
-
     position: absolute;
     left: 20px;
     bottom: 20px;
-
 }
