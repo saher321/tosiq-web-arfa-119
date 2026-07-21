@@ -9,3 +9,6 @@
 
 20 July, 2026 (Position property)
 	- https://www.youtube.com/watch?v=50XJNt2azSQ
+
+21 July, 2026 (Pseudo element)
+	- https://www.youtube.com/watch?v=vVJAuT4vjEQ
