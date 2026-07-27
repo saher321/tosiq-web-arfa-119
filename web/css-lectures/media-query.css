@@ -1,0 +1,39 @@
+h1 {
+    color: seagreen
+}
+
+@media (width < 321px){
+    body {
+        background-color: #ddd;
+        color: black;
+    }
+    h1 {
+        font-size: 56px;
+    }
+}
+
+@media (width > 320px) and (width < 900px) {
+    h1{
+        display: none;
+    }
+}
+
+ /*
+@media (max-width: 400px) {
+    h1 {
+        color: blue
+    }   
+}
+
+@media (min-width: 700px) {
+    h1 {
+        color: red
+    }   
+}
+
+
+@media (min-width: 450px) and (max-width: 650px) {
+    h1 {
+        color: black
+    }   
+} */
