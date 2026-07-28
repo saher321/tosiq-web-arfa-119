@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <button commandfor="info-modal" command="show-modal" class="show-btn">
+        Show Information
+    </button>
+
+    <dialog id="info-modal">
+
+        <button commandfor="info-modal" command="close" class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>User Information</h2>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span>Name</span>
+                <strong>John Doe</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Email</span>
+                <strong>john@example.com</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Designation</span>
+                <strong>UI/UX Designer</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Address</span>
+                <strong>New York, USA</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Contact No</span>
+                <strong>+1 123 456 7890</strong>
+            </div>
+
+        </div>
+
+    </dialog>
+
+</body>
+
+</html>

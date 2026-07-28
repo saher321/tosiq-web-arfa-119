@@ -1,0 +1,217 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#1d1d1d;
+    min-height:100vh;
+    margin:0;
+    position:relative;
+}
+
+/* Show Button - Top Left */
+
+.show-btn{
+    position:fixed;
+    top:24px;
+    left:24px;
+
+    padding:14px 28px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff7a18,#ffb347);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(255,122,24,.35);
+    z-index:1000;
+}
+
+.show-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(255,122,24,.5);
+}
+
+/* Dialog */
+
+dialog{
+    width:420px;
+    max-width:92%;
+    border:none;
+    border-radius:22px;
+    background:rgba(45,45,45,.95);
+    backdrop-filter:blur(18px);
+    color:#fff;
+    padding:32px;
+    overflow:hidden;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55),
+        inset 0 1px rgba(255,255,255,.08);
+
+    animation:popup .35s ease;
+}
+
+/* Orange Glow */
+
+dialog::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:linear-gradient(135deg,#ff7a18,#ffb347);
+    border-radius:50%;
+    filter:blur(90px);
+    top:-80px;
+    right:-60px;
+    opacity:.35;
+    pointer-events:none;
+}
+
+/* Overlay */
+
+dialog::backdrop{
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(6px);
+}
+
+/* Heading */
+
+dialog h2{
+    font-size:26px;
+    margin-bottom:28px;
+    font-weight:700;
+    color:#fff;
+}
+
+/* Close Button */
+
+.close-btn{
+    position:absolute;
+    top:18px;
+    right:18px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+    color:#ff9f43;
+
+    cursor:pointer;
+    transition:.3s;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+}
+
+.close-btn:hover{
+    background:#ff7a18;
+    color:#fff;
+    transform:rotate(90deg);
+}
+
+/* Information List */
+
+.info-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+/* Information Card */
+
+.info-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.info-item:hover{
+    transform:translateX(6px);
+    background:rgba(255,122,24,.12);
+    border-color:rgba(255,180,71,.35);
+}
+
+.info-item span{
+    color:#bdbdbd;
+    font-size:14px;
+    font-weight:500;
+}
+
+.info-item strong{
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    text-align:right;
+}
+
+/* Popup Animation */
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translate(-50%, -55%) scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translate(-50%, -50%) scale(1);
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width:500px){
+
+    .show-btn{
+        top:16px;
+        left:16px;
+        padding:12px 22px;
+    }
+
+    dialog{
+        width:95%;
+        padding:24px;
+    }
+
+    .info-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .info-item strong{
+        text-align:left;
+    }
+
+}
