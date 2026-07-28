@@ -15,3 +15,6 @@
 
 27 July, 2026 (media query : responsiveness)
 	- https://www.youtube.com/watch?v=x2DzpA7Ubyk
+
+28 July, 2026 (box model, deploye html css page on vercel using github)
+	- https://www.youtube.com/watch?v=KgIcroH2GrM
