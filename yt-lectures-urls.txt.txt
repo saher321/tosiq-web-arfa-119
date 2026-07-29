@@ -18,3 +18,6 @@
 
 28 July, 2026 (box model, deploye html css page on vercel using github)
 	- https://www.youtube.com/watch?v=KgIcroH2GrM
+
+29 July, 2026 (animation)
+	- https://www.youtube.com/watch?v=VEff2FShMso
