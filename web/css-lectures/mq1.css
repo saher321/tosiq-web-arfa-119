@@ -1,0 +1,51 @@
+body {
+    background-color: #999
+}
+
+.nav-wrapper {
+    padding: 28px;
+    background-color: #333;
+    margin-bottom: 16px;
+    color: white
+}
+
+.nav-wrapper .menu {
+    display: none;
+}
+
+.card{
+    background-color: #f1f1f1;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+button {
+    background-color: #386bf5;
+    color: #f1f1f1;
+    border: none;
+    padding: 6px 12px; 
+    border-radius: 8px;
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-color: red
+    }
+    .card{
+        background-color: yellow;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-wrapper .links {
+        display: none;
+    }
+
+    .nav-wrapper .menu {
+        display: inline-block;
+    }
+}
