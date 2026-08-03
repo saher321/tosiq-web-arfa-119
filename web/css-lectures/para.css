@@ -1,0 +1,28 @@
+h1 {
+    color: darkgray;
+    width: fit-content;
+    position: relative;
+}
+h1::before {
+    position: absolute;
+    bottom: -10px;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50px;
+    background-color: navy;
+    transition: .3s
+}
+
+h1:hover::before {
+    width: 100%;
+    z-index: -1
+}
+
+p {
+    background-color: #f1f1f1;
+    max-width: 500px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px #ccc;
+}
