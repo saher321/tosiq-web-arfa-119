@@ -19,8 +19,13 @@
 28 July, 2026 (box model, deploye html css page on vercel using github)
 	- https://www.youtube.com/watch?v=KgIcroH2GrM
 
+29 July, 2026 (animation)
+	- https://www.youtube.com/watch?v=VEff2FShMso
+
 3 August, 2026 (Bootstrap / tailwindcss)
 	- https://www.youtube.com/watch?v=vGXyhY_sQmY
 
-29 July, 2026 (animation)
-	- https://www.youtube.com/watch?v=VEff2FShMso
+4 August, 2026 (Tailwindcss ui components)
+	- https://www.youtube.com/watch?v=kTvhONaybD0
+
+
