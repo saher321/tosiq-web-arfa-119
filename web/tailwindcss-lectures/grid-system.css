@@ -1,0 +1,8 @@
+.grid div{
+    background-color: #dc9ef5;
+    color: purple;
+    padding: 4px;
+    border: 1px solid purple;
+    border-radius: 4px;
+    text-align: center;
+}
