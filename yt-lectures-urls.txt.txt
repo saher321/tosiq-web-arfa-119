@@ -28,7 +28,10 @@
 4 August, 2026 (Tailwindcss ui components)
 	- https://www.youtube.com/watch?v=kTvhONaybD0
 
-10 August, 2025 (Tailwindcss grid, js basic sumission)
+10 August, 2026 (Tailwindcss grid, js basic sumission)
 	- https://www.youtube.com/watch?v=PX_1RPHJznI
+
+11 August, 2026 (Javascript intro)
+	- https://www.youtube.com/watch?v=mbqoNcfTi9k
 
 
