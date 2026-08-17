@@ -16,3 +16,4 @@ console.log("Total marks:", totalMarks)
 console.log("Obtained marks:", sum)
 console.log("Avg mar is:", avg)
 console.log("Percentage is:", prcnt.toFixed(2))
+
