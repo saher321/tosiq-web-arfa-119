@@ -34,4 +34,7 @@
 11 August, 2026 (Javascript intro)
 	- https://www.youtube.com/watch?v=mbqoNcfTi9k
 
+17 August, 2026 (Js basics)
+	- https://www.youtube.com/watch?v=AF5aBgG61BY
+
 
