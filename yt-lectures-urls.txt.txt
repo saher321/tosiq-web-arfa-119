@@ -37,4 +37,6 @@
 17 August, 2026 (Js basics)
 	- https://www.youtube.com/watch?v=AF5aBgG61BY
 
+18 August, 2026 (user defined input)
+	- https://www.youtube.com/watch?v=kkJuH3dR6dM
 
