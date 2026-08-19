@@ -21,7 +21,6 @@ function showData() {
     // }
 
     var a = Number(document.getElementById("no1").value)
-    // var b = Number(document.getElementById("no2").value)
     var res = document.getElementById("result")
     
     if (a % 2 == 0) {
