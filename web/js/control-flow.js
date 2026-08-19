@@ -23,10 +23,22 @@ function showData() {
     var a = Number(document.getElementById("no1").value)
     var res = document.getElementById("result")
     
-    if (a % 2 == 0) {
-        res.innerText = "Number is even"
+    // if (a % 2 == 0) {
+    //     res.innerText = "Number is even"
+    // } else {
+    //     res.innerText = "Number is odd"
+    // }
+
+    // if (a % 4 == 0) {
+    //     res.innerText = a + " is Leap year"
+    // } else {
+    //     res.innerText = a + " isn't Leap year"
+    // }
+
+    if (a > 0) {
+        res.innerText = "Given number is positive"
     } else {
-        res.innerText = "Number is odd"
+        res.innerText = "Given number is negative"
     }
 
 
