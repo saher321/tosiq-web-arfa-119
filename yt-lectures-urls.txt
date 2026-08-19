@@ -40,3 +40,6 @@
 18 August, 2026 (user defined input)
 	- https://www.youtube.com/watch?v=kkJuH3dR6dM
 
+19 August, 2026 (if else, switch, multiple function)
+	- https://www.youtube.com/watch?v=GQEiA8q7cws
+

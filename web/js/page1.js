@@ -8,7 +8,8 @@
 // var ob: 24 }
 // document.write(obj.name)
 // indexes     0          1     2   3       4
-// var arr = [  "White",  "Black", 23, 55, { name: "Ali", age: 24 } ]j = { name: "Ali", age
+// var arr = [  "White",  "Black", 23, 55, { name: "Ali", age: 24 } ]
+// user = { name: "Ali", age: 23 }
 // console.log(arr[4])
 // myFunc()
 // function myFunc(){
