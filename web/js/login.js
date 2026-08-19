@@ -2,5 +2,8 @@ function login() {
     var email = "admin@gmail.com"
     var pass  = "admin123"
     
+    var useremail = ""
+    var userpassw = ""
+
     console.log("Login function is clicked")
 }
