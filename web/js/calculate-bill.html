@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <th colspan="2">Calculate Bill</th>
+        </tr>
+        <tr>
+            <td>Consumed Units</td>
+            <td><input type="number" id="consumed_units" placeholder="Enter your current units"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button onclick="calc_bill()">Calculate bill</button> </td>
+        </tr>
+        <tr>
+            <td>Payable amount</td>
+            <td> <div class="result" id="result"></div> </td>
+        </tr>
+    </table>
+
+
+    <script src="./calculate-bill.js"></script>
+
+</body>
+</html>

@@ -43,3 +43,6 @@
 19 August, 2026 (if else, switch, multiple function)
 	- https://www.youtube.com/watch?v=GQEiA8q7cws
 
+24 August, 2026 (multiple if-else)
+	- https://www.youtube.com/watch?v=laqqkzL8O8Y
+
