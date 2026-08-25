@@ -14,7 +14,8 @@ function printResult() {
     //     console.log(i)
     // }
     for (i=1; i<=10; i++){
-        console.log("2 x " + i + " = " + (2*i) )
+        var res = "2 x " + i + " = " + (2*i)
+        console.log(res)
     }
 }
 
