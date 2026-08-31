@@ -46,3 +46,6 @@
 24 August, 2026 (multiple if-else)
 	- https://www.youtube.com/watch?v=laqqkzL8O8Y
 
+31 August, 2026 (arrays, revise)
+	- https://www.youtube.com/watch?v=T-E8yWFU3ic
+
