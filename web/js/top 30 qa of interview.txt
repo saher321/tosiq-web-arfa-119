@@ -1,0 +1,873 @@
+Absolutely. Here are **30 intermediate-level JavaScript interview questions with answers**, designed for developers who already know the basics and want to prepare for interviews or strengthen their practical knowledge.
+
+## 30 Intermediate JavaScript Questions & Answers
+
+### 1. What is the difference between `var`, `let`, and `const`?
+
+**Answer:**
+
+* `var` is function-scoped.
+* `let` is block-scoped.
+* `const` is block-scoped and cannot be reassigned.
+* `let` and `const` were introduced in ES6.
+
+```javascript
+var name = "Anas";
+let age = 25;
+const country = "Pakistan";
+
+age = 26; // Allowed
+// country = "India"; // Error
+```
+
+**Best practice:** Prefer `const` by default and use `let` when reassignment is required.
+
+---
+
+### 2. What is hoisting in JavaScript?
+
+**Answer:**
+
+Hoisting is JavaScript's behavior of processing declarations before executing the code.
+
+```javascript
+console.log(name); // undefined
+var name = "Anas";
+```
+
+Conceptually:
+
+```javascript
+var name;
+console.log(name);
+name = "Anas";
+```
+
+`let` and `const` are also hoisted, but they remain in the **Temporal Dead Zone (TDZ)** until their declaration is reached.
+
+```javascript
+console.log(age); // ReferenceError
+let age = 25;
+```
+
+---
+
+### 3. What is the Temporal Dead Zone?
+
+**Answer:**
+
+The **Temporal Dead Zone** is the period between entering a scope and the actual declaration of a `let` or `const` variable.
+
+```javascript
+console.log(x); // ReferenceError
+
+let x = 10;
+```
+
+The variable exists in the scope but cannot be accessed before its declaration.
+
+---
+
+### 4. What is a closure in JavaScript?
+
+**Answer:**
+
+A closure occurs when a function remembers and can access variables from its outer scope even after the outer function has finished executing.
+
+```javascript
+function counter() {
+    let count = 0;
+
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const increment = counter();
+
+console.log(increment()); // 1
+console.log(increment()); // 2
+```
+
+The inner function maintains access to `count`.
+
+**Common uses:** private variables, callbacks, event handlers, and function factories.
+
+---
+
+### 5. What is the difference between `==` and `===`?
+
+**Answer:**
+
+`==` performs type coercion before comparison, while `===` checks both value and type.
+
+```javascript
+5 == "5";   // true
+5 === "5";  // false
+```
+
+Another example:
+
+```javascript
+0 == false;  // true
+0 === false; // false
+```
+
+**Best practice:** Generally use `===` and `!==`.
+
+---
+
+### 6. What are primitive and reference data types?
+
+**Answer:**
+
+**Primitive types:**
+
+```text
+string
+number
+boolean
+undefined
+null
+bigint
+symbol
+```
+
+They store values directly.
+
+**Reference types** include objects, arrays, and functions.
+
+```javascript
+let a = 10;
+let b = a;
+
+b = 20;
+
+console.log(a); // 10
+```
+
+With objects:
+
+```javascript
+let obj1 = { name: "Anas" };
+let obj2 = obj1;
+
+obj2.name = "Ali";
+
+console.log(obj1.name); // Ali
+```
+
+Both variables reference the same object.
+
+---
+
+### 7. What is the difference between shallow copy and deep copy?
+
+**Answer:**
+
+A **shallow copy** copies only the first level.
+
+```javascript
+const user = {
+    name: "Anas",
+    address: {
+        city: "Lahore"
+    }
+};
+
+const copy = { ...user };
+
+copy.address.city = "Islamabad";
+
+console.log(user.address.city); // Islamabad
+```
+
+A deep copy creates independent nested objects.
+
+One modern approach:
+
+```javascript
+const copy = structuredClone(user);
+```
+
+---
+
+### 8. What is the spread operator?
+
+**Answer:**
+
+The spread operator (`...`) expands elements of an iterable or properties of an object.
+
+### Array
+
+```javascript
+const a = [1, 2, 3];
+const b = [...a, 4, 5];
+
+console.log(b); // [1, 2, 3, 4, 5]
+```
+
+### Object
+
+```javascript
+const user = {
+    name: "Anas"
+};
+
+const updatedUser = {
+    ...user,
+    age: 25
+};
+```
+
+It is commonly used for copying and merging arrays and objects.
+
+---
+
+### 9. What is the rest parameter?
+
+**Answer:**
+
+The rest parameter collects multiple arguments into an array.
+
+```javascript
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(10, 20, 30)); // 60
+```
+
+Here, `numbers` contains:
+
+```javascript
+[10, 20, 30]
+```
+
+**Spread:** expands values.
+**Rest:** collects values.
+
+---
+
+### 10. What is the difference between `map()`, `filter()`, and `reduce()`?
+
+**Answer:**
+
+### `map()`
+
+Creates a new array by transforming every element.
+
+```javascript
+const numbers = [1, 2, 3];
+
+const result = numbers.map(n => n * 2);
+
+console.log(result); // [2, 4, 6]
+```
+
+### `filter()`
+
+Creates a new array containing elements that satisfy a condition.
+
+```javascript
+const result = numbers.filter(n => n > 1);
+
+console.log(result); // [2, 3]
+```
+
+### `reduce()`
+
+Reduces an array to a single value.
+
+```javascript
+const result = numbers.reduce((sum, n) => sum + n, 0);
+
+console.log(result); // 6
+```
+
+---
+
+### 11. What is the difference between `forEach()` and `map()`?
+
+**Answer:**
+
+`forEach()` executes a function for each element but does **not return a new array**.
+
+```javascript
+const numbers = [1, 2, 3];
+
+numbers.forEach(n => {
+    console.log(n);
+});
+```
+
+`map()` returns a new array.
+
+```javascript
+const doubled = numbers.map(n => n * 2);
+
+console.log(doubled); // [2, 4, 6]
+```
+
+Use `map()` when you need the transformed array.
+
+---
+
+### 12. What is an arrow function?
+
+**Answer:**
+
+Arrow functions provide shorter function syntax.
+
+```javascript
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // 5
+```
+
+A major difference is that arrow functions don't have their own `this`.
+
+```javascript
+const user = {
+    name: "Anas",
+
+    greet() {
+        const sayName = () => {
+            console.log(this.name);
+        };
+
+        sayName();
+    }
+};
+
+user.greet(); // Anas
+```
+
+---
+
+### 13. What is `this` in JavaScript?
+
+**Answer:**
+
+`this` refers to the execution context of a function.
+
+For an object method:
+
+```javascript
+const user = {
+    name: "Anas",
+
+    greet() {
+        console.log(this.name);
+    }
+};
+
+user.greet(); // Anas
+```
+
+Here, `this` refers to `user`.
+
+However, arrow functions don't create their own `this`; they inherit it from the surrounding scope.
+
+---
+
+### 14. What is a callback function?
+
+**Answer:**
+
+A callback is a function passed to another function to be executed later.
+
+```javascript
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+greet("Anas", function () {
+    console.log("Welcome!");
+});
+```
+
+Callbacks are commonly used with events, asynchronous operations, and array methods.
+
+---
+
+### 15. What is a Promise?
+
+**Answer:**
+
+A Promise represents the eventual result of an asynchronous operation.
+
+It has three states:
+
+```text
+Pending
+Fulfilled
+Rejected
+```
+
+Example:
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    const success = true;
+
+    if (success) {
+        resolve("Success!");
+    } else {
+        reject("Something went wrong");
+    }
+});
+
+promise
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+```
+
+---
+
+### 16. What is `async/await`?
+
+**Answer:**
+
+`async/await` provides cleaner syntax for working with Promises.
+
+```javascript
+async function getData() {
+    try {
+        const response = await fetch("/api/users");
+        const data = await response.json();
+
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+```
+
+An `async` function always returns a Promise.
+
+---
+
+### 17. What is the difference between synchronous and asynchronous JavaScript?
+
+**Answer:**
+
+**Synchronous** code executes sequentially.
+
+```javascript
+console.log("A");
+console.log("B");
+console.log("C");
+```
+
+Output:
+
+```text
+A
+B
+C
+```
+
+**Asynchronous** operations can complete later without blocking the current flow.
+
+```javascript
+console.log("A");
+
+setTimeout(() => {
+    console.log("B");
+}, 1000);
+
+console.log("C");
+```
+
+Output:
+
+```text
+A
+C
+B
+```
+
+---
+
+### 18. What is the JavaScript event loop?
+
+**Answer:**
+
+The **event loop** allows JavaScript to handle asynchronous operations despite JavaScript's main execution model being single-threaded.
+
+For example:
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+console.log("End");
+```
+
+Output:
+
+```text
+Start
+End
+Timeout
+```
+
+The callback waits until the current call stack is empty before it runs.
+
+---
+
+### 19. What is the difference between microtasks and macrotasks?
+
+**Answer:**
+
+Promise callbacks are generally handled through the **microtask queue**, while `setTimeout` callbacks use the **task/macrotask queue**.
+
+```javascript
+console.log("A");
+
+setTimeout(() => {
+    console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("C");
+});
+
+console.log("D");
+```
+
+Output:
+
+```text
+A
+D
+C
+B
+```
+
+Microtasks are processed before the next task/macrotask.
+
+---
+
+### 20. What is destructuring?
+
+**Answer:**
+
+Destructuring allows you to extract values from arrays or objects.
+
+### Object destructuring
+
+```javascript
+const user = {
+    name: "Anas",
+    age: 25
+};
+
+const { name, age } = user;
+
+console.log(name); // Anas
+```
+
+### Array destructuring
+
+```javascript
+const numbers = [10, 20, 30];
+
+const [first, second] = numbers;
+
+console.log(first);  // 10
+console.log(second); // 20
+```
+
+---
+
+### 21. What are default parameters?
+
+**Answer:**
+
+Default parameters provide fallback values when an argument isn't supplied.
+
+```javascript
+function greet(name = "Guest") {
+    console.log(`Hello ${name}`);
+}
+
+greet();        // Hello Guest
+greet("Anas");  // Hello Anas
+```
+
+---
+
+### 22. What is optional chaining (`?.`)?
+
+**Answer:**
+
+Optional chaining allows you to safely access nested properties without throwing an error if an intermediate value is `null` or `undefined`.
+
+```javascript
+const user = {};
+
+console.log(user.address?.city);
+// undefined
+```
+
+Without optional chaining, accessing `user.address.city` would cause an error because `address` is undefined.
+
+---
+
+### 23. What is the nullish coalescing operator (`??`)?
+
+**Answer:**
+
+`??` returns the right-hand value only when the left-hand value is `null` or `undefined`.
+
+```javascript
+const name = null ?? "Guest";
+
+console.log(name); // Guest
+```
+
+Compare:
+
+```javascript
+0 || 100;  // 100
+0 ?? 100;  // 0
+```
+
+This makes `??` useful when `0`, `false`, or `""` are valid values.
+
+---
+
+### 24. What is a higher-order function?
+
+**Answer:**
+
+A higher-order function either:
+
+1. Accepts a function as an argument, or
+2. Returns a function.
+
+Example:
+
+```javascript
+function multiplyBy(x) {
+    return function (y) {
+        return x * y;
+    };
+}
+
+const double = multiplyBy(2);
+
+console.log(double(5)); // 10
+```
+
+`multiplyBy()` returns another function.
+
+---
+
+### 25. What is debouncing?
+
+**Answer:**
+
+Debouncing delays function execution until a specified amount of time has passed since the last call.
+
+It is useful for:
+
+* Search inputs
+* API requests
+* Window resize events
+* Form validation
+
+Example:
+
+```javascript
+function debounce(fn, delay) {
+    let timer;
+
+    return function (...args) {
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            fn(...args);
+        }, delay);
+    };
+}
+```
+
+If the function is called repeatedly, the timer keeps resetting.
+
+---
+
+### 26. What is throttling?
+
+**Answer:**
+
+Throttling limits how frequently a function can execute.
+
+For example, instead of executing a scroll handler hundreds of times per second, you can limit it to once every 200ms.
+
+```javascript
+function throttle(fn, delay) {
+    let lastTime = 0;
+
+    return function (...args) {
+        const now = Date.now();
+
+        if (now - lastTime >= delay) {
+            fn(...args);
+            lastTime = now;
+        }
+    };
+}
+```
+
+**Debounce:** Wait until activity stops.
+**Throttle:** Run at controlled intervals.
+
+---
+
+### 27. What is event delegation?
+
+**Answer:**
+
+Event delegation means attaching one event listener to a parent element instead of adding listeners to every child.
+
+```javascript
+document.querySelector("#list").addEventListener("click", (event) => {
+    if (event.target.matches("li")) {
+        console.log(event.target.textContent);
+    }
+});
+```
+
+This works because of **event bubbling**.
+
+It can reduce the number of event listeners and is particularly useful for dynamically generated elements.
+
+---
+
+### 28. What is the difference between `localStorage`, `sessionStorage`, and cookies?
+
+**Answer:**
+
+| Feature                 | localStorage   | sessionStorage         | Cookies                 |
+| ----------------------- | -------------- | ---------------------- | ----------------------- |
+| Persistence             | Until cleared  | Until tab/session ends | Configurable expiration |
+| Capacity                | Usually larger | Usually larger         | Small                   |
+| Sent with HTTP requests | No             | No                     | Yes                     |
+| Typical use             | Preferences    | Temporary state        | Server-related state    |
+
+Example:
+
+```javascript
+localStorage.setItem("name", "Anas");
+
+const name = localStorage.getItem("name");
+
+console.log(name);
+```
+
+Don't store sensitive authentication information in browser storage without carefully considering the security model.
+
+---
+
+### 29. What are ES modules?
+
+**Answer:**
+
+ES modules allow JavaScript code to be divided into separate files.
+
+**math.js**
+
+```javascript
+export function add(a, b) {
+    return a + b;
+}
+```
+
+**app.js**
+
+```javascript
+import { add } from "./math.js";
+
+console.log(add(5, 3));
+```
+
+Modules make applications easier to organize, maintain, and scale.
+
+---
+
+### 30. What is the difference between `Promise.all()`, `Promise.allSettled()`, and `Promise.race()`?
+
+**Answer:**
+
+### `Promise.all()`
+
+Waits for all Promises to fulfill. If one rejects, the combined Promise rejects.
+
+```javascript
+const results = await Promise.all([
+    fetch("/users"),
+    fetch("/posts")
+]);
+```
+
+### `Promise.allSettled()`
+
+Waits for all Promises to finish, regardless of whether they fulfilled or rejected.
+
+```javascript
+const results = await Promise.allSettled([
+    fetch("/users"),
+    fetch("/posts")
+]);
+```
+
+### `Promise.race()`
+
+Settles as soon as the first Promise settles.
+
+```javascript
+const result = await Promise.race([
+    fetch("/api"),
+    timeoutPromise
+]);
+```
+
+### Quick comparison
+
+| Method                 | Behavior                   |
+| ---------------------- | -------------------------- |
+| `Promise.all()`        | All must succeed           |
+| `Promise.allSettled()` | Wait for everything        |
+| `Promise.race()`       | First settled Promise wins |
+
+---
+
+## ⭐ Most Important Topics to Master
+
+If you're preparing for a **JavaScript intermediate interview**, prioritize these areas:
+
+1. **Scope & hoisting**
+2. **Closures**
+3. **`this`**
+4. **Promises**
+5. **Async/await**
+6. **Event loop**
+7. **Microtasks vs macrotasks**
+8. **Array methods**
+9. **Destructuring & spread/rest**
+10. **Shallow vs deep copying**
+11. **Event delegation**
+12. **Debouncing & throttling**
+13. **ES modules**
+14. **Error handling**
+15. **Browser storage**
+
+A strong intermediate candidate should be able to **explain these concepts and write small examples without relying on memorized definitions**.
