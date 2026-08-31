@@ -12,7 +12,9 @@ console.log(colors)
 // console.log("Colors list length", colors.length)
 
 // console.log(colors[3])
+let ul = document.getElementById("clrList")
 
 for(let i=0; i <= colors.length-1; i++){
-    console.log(colors[i])
+    // console.log(colors[i])
+    ul.innerHTML += "<li>" + colors[i] + "</li>"
 }
