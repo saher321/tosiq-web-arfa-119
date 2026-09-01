@@ -12,9 +12,19 @@ console.log(colors)
 // console.log("Colors list length", colors.length)
 
 // console.log(colors[3])
-let ul = document.getElementById("clrList")
+let select = document.getElementById("clrList")
 
 for(let i=0; i <= colors.length-1; i++){
     // console.log(colors[i])
-    ul.innerHTML += "<li>" + colors[i] + "</li>"
+    select.innerHTML += "<option>" + colors[i] + "</option>"
+}
+
+
+function addNewItem () {
+    let text = document.getElementById("text")
+    let ul = document.getElementById("listItem")
+
+    ul.innerHTML += "<li>" + text.value + "</li>"
+
+    text.value = ""
 }
