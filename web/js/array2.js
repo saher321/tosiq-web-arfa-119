@@ -23,3 +23,17 @@ const users = [ "ali01", "usman.malik", "carol.john" ]
 
 const check = users.indexOf("caroljohn")
 console.log(check)
+
+
+const employees = [
+    {id:1011, name: "Jack", status: "inactive", salary: 45000},
+    {id:1012, name: "Ruby", status: "inactive", salary: 205000}
+]
+// map(), filter("inactive"), find(1012), reduce(salary)
+
+// output: {id:1012, name: "Jack", status: "inactive"}
+// output: 250,000
+
+employees.map((emp) => {
+    console.log(emp.name, emp.salary)
+})
