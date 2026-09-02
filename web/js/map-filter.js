@@ -23,3 +23,18 @@ function showUsers (data) {
         `
     })
 }
+
+function filterByStatus() {
+    let sts = document.getElementById("status").value
+    
+    let userList = document.getElementById("users-tbl")
+
+    userList.innerHTML = ""
+
+    if (sts == "all") {
+        showUsers(users)
+    } else {
+        const filteredUsers = users.filter((user) => user.status == sts )
+        showUsers(filteredUsers)
+    }
+}
