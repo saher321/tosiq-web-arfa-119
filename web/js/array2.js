@@ -1,6 +1,17 @@
 const names = ["Tahir", "Huraira", "Subhan", "Ali"]
-const cities= ["Lahore", "Karanchi", "Islamabad"]
+const cities= ["Lahore", "Karanchi", "Islamabad", "Jaurabad", "Kotmonin"]
 
+// 7 sept, 2026
+
+// index number, 
+// mode(1 -> remove, 0 -> replace value over index),
+// given value
+names.splice(2, 0, "Jawad")
+// console.log(names)
+const remainingCities = cities.slice(2)
+console.log(remainingCities)
+
+// ----------------
 // const newArray = names.concat(cities)
 const newArray = [ ...names, ...cities, "Football"]
 // console.log(newArray)
@@ -41,6 +52,6 @@ const filteredEmployee = employees.find((emp) => emp.id == 1013)
 // reduce(salary) returns totall value / overall value
 // let sum = 0 :: old_suppose
 const totalSalary = employees.reduce((sum, elem) => sum + elem.salary, 1)
-console.log(totalSalary)
+// console.log(totalSalary)
 // output: {id:1012, name: "Jack", status: "inactive"}
 // output: 250,000
