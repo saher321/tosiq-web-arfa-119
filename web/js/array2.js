@@ -3,7 +3,7 @@ const cities= ["Lahore", "Karanchi", "Islamabad"]
 
 // const newArray = names.concat(cities)
 const newArray = [ ...names, ...cities, "Football"]
-console.log(newArray)
+// console.log(newArray)
 
 function checkUser () {
     const users = [ "ali01", "usman.malik", "carol.john" ]
@@ -22,18 +22,25 @@ function checkUser () {
 const users = [ "ali01", "usman.malik", "carol.john" ]
 
 const check = users.indexOf("caroljohn")
-console.log(check)
+// console.log(check)
 
 
 const employees = [
     {id:1011, name: "Jack", status: "inactive", salary: 45000},
-    {id:1012, name: "Ruby", status: "inactive", salary: 205000}
+    {id:1012, name: "Ruby", status: "inactive", salary: 205000},
+    {id:1013, name: "Samanatha", status: "active", salary: 50000}
 ]
-// map(), filter("inactive"), find(1012), reduce(salary)
-
+// map() => returns updated array, 
+employees.map((emp) => {
+    // console.log(emp.name, emp.salary)
+})
+// filter("inactive") return new array, 
+// find(1012) => returns single object, 
+const filteredEmployee = employees.find((emp) => emp.id == 1013)
+// console.log(filteredEmployee)
+// reduce(salary) returns totall value / overall value
+// let sum = 0 :: old_suppose
+const totalSalary = employees.reduce((sum, elem) => sum + elem.salary, 1)
+console.log(totalSalary)
 // output: {id:1012, name: "Jack", status: "inactive"}
 // output: 250,000
-
-employees.map((emp) => {
-    console.log(emp.name, emp.salary)
-})
