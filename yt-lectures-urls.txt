@@ -55,3 +55,6 @@
 7 Sep, 206 (assignments, find/reduce)
 	- https://www.youtube.com/watch?v=Gqtzn7_G9T4
 
+8, Sep, 2026 (Strings, revision)
+	- https://www.youtube.com/watch?v=IyqOdPFgsaI
+
