@@ -1,5 +1,6 @@
 import React from 'react'
 import './assets/css/app.css'
+import { APP_NAME, EXPLORE_TITLE } from './utils/strings.js'
 const App = () => {
   // const liCss = {color: "red"}
 
@@ -8,8 +9,10 @@ const App = () => {
   }
   return (
     <div>
-      Welcome to Reactjs 
-      <button onClick={showResult} className='cursor-pointer m-2 bg-gray-900 text-white p-3 rounded-lg hover:bg-gray-800'>Explore more</button>
+      Welcome to {APP_NAME} 
+      <button onClick={showResult} className='cursor-pointer m-2 bg-gray-900 text-white p-3 rounded-lg hover:bg-gray-800'>
+        {EXPLORE_TITLE}
+      </button>
       <br />
       <ol>
         <li>Custom css / tailwindcss / bootstrap / other lib</li>
