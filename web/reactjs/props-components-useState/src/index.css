@@ -1,0 +1,25 @@
+h2{
+  color: tomato
+}
+
+.active{
+  background-color: #c3e6be;
+  color: rgb(26, 124, 18);
+  padding: 3px 6px;
+  font-size: 9px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: 'verdana', sans-sarif
+}
+
+.inactive{
+  background-color: #e6bebe;
+  color: rgb(124, 18, 18);
+  padding: 3px 6px;
+  font-size: 9px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: 'verdana', sans-sarif
+}
