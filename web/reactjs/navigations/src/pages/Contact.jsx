@@ -1,12 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import WebLayout from '../layouts/WebLayout'
 
 const Contact = () => {
   return (
-    <div>
-      <Navbar />
+    <WebLayout>
       Contact page
-    </div>
+    </WebLayout>
   )
 }
 

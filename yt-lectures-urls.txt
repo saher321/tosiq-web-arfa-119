@@ -67,4 +67,7 @@
 16 Sep, 2026 (props components useState(hook))
 	- https://www.youtube.com/watch?v=Cr9x_OmPscA
 
+21 Sep, 2026 (routing, layouts, useEffect(hook))
+	- https://www.youtube.com/watch?v=SY1MEqrMSig
+
 
