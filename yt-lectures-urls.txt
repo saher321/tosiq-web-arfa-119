@@ -70,4 +70,7 @@
 21 Sep, 2026 (routing, layouts, useEffect(hook))
 	- https://www.youtube.com/watch?v=SY1MEqrMSig
 
+22 Sep, 2026 (dynamic routing with ui and active nav link)
+	- https://www.youtube.com/watch?v=b_LwsuW5Npg
+
 
