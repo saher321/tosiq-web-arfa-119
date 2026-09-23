@@ -8,6 +8,8 @@ const Navbar = () => {
     {url: '/', text: "Home"},
     {url: '/about-us', text: "About"},
     {url: '/contact-us', text: "Contact"},
+    {url: '/enrollment', text: "Enrollment"},
+    {url: '/sum', text: "Sum"},
   ]
   return (
     <div className='flex bg-black text-white gap-5 w-fit mx-auto m-5 p-3 rounded'>
