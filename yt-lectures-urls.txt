@@ -73,4 +73,6 @@
 22 Sep, 2026 (dynamic routing with ui and active nav link)
 	- https://www.youtube.com/watch?v=b_LwsuW5Npg
 
+23 Sep, 2026 (zustand global statement, useRef, useForm)
+	- https://www.youtube.com/watch?v=CPK1Rkp0xWk
 
