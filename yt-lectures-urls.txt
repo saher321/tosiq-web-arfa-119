@@ -76,3 +76,6 @@
 23 Sep, 2026 (zustand global statement, useRef, useForm)
 	- https://www.youtube.com/watch?v=CPK1Rkp0xWk
 
+28 Sep, 2026 (axios, api integration)
+	- https://www.youtube.com/watch?v=5AtzqmjqMN0
+
