@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 const WebLayout = ({children}) => {
   return (
     <div>
-        <div className='mx-auto max-w-xl'>
+        <div className='mx-auto max-w-3xl'>
             <Navbar />
             
             {children}
