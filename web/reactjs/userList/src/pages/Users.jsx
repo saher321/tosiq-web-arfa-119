@@ -3,7 +3,7 @@ import WebLayout from '../layouts/WebLayout'
 import axios from 'axios'
 import { USERS_API } from '../utils/apis.js'
 
-const Users = () => {
+const Users = () => { 
   const [users, setUsers] = useState([])
 
   const getUsers = async () => {
