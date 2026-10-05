@@ -1,7 +1,18 @@
 import express from "express"
+import { users } from "./utils/dummyUser.js"
 
 const app = express()
 const port = 3000 // 5000 8000 7000
+
+
+
+// users api
+app.get("/users", (req, res) => {
+    return res.send({
+        status: true,
+        users
+    })
+})
 
 // request method: GET, POST, PUT / PATCH, DELETE
 app.get("/greeting", (req, res) => {
