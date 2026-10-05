@@ -79,3 +79,6 @@
 28 Sep, 2026 (axios, api integration)
 	- https://www.youtube.com/watch?v=5AtzqmjqMN0
 
+5 Oct, 2026 (mern intro)
+	- https://www.youtube.com/watch?v=Yrnje_-NCWQ
+
