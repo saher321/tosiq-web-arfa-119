@@ -23,3 +23,6 @@ app.get("/greeting", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`)
 })
+
+// assignment make product api that show 5 products
+// id, skuNo, name, category, price
