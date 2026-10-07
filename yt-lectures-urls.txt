@@ -85,3 +85,6 @@
 6 Oct, 2026 (folder structure, nodemon pkg)
 	- https://www.youtube.com/watch?v=ltxGOxFKMnU
 
+7 Oct, 2026 (integrated employee api to frontend react)
+	- https://www.youtube.com/watch?v=YwKPS1UpPUY
+
