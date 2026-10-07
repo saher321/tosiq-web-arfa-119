@@ -5,7 +5,7 @@ const employeeList = [
     email: "ali.khan@example.com",
     designation: "Frontend Developer",
     salary: 85000,
-    accountStatus: "active"
+    accountStatus: "inactive"
   },
   {
     id: 2,
