@@ -88,3 +88,6 @@
 7 Oct, 2026 (integrated employee api to frontend react)
 	- https://www.youtube.com/watch?v=YwKPS1UpPUY
 
+12 Oct, 2026 (db connection, modules)
+	- https://www.youtube.com/watch?v=iHISUpz7F3I
+
