@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="my-5 w-fit mx-auto">
-      <div className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 p-1.5 shadow-xl shadow-black/5 backdrop-blur-xl">
+      <div className="flex items-center gap-1 rounded-full border border-white/20 bg-white p-1.5 shadow-xl shadow-black/5 backdrop-blur-xl">
         {links.map(({ name, path, icon: Icon }) => (
           <NavLink
             key={path}
