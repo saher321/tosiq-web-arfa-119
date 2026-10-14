@@ -10,7 +10,11 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT
 const PREFIX = "/api/v1"
+
+// middleware
 app.use(cors())
+app.use(express.json())
+
 
 // all routes
 // http://localhost:3000/api/v1/employees

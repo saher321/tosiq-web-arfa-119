@@ -13,5 +13,38 @@ export const employees = async (req, res) => {
 }
 
 export const addEmployee = async (req, res) => {
-    console.log(req.body)
+    const { name, email, phone, salary, designation } = req.body
+
+    if (!name || !email || !phone || !salary || !designation){
+        return res.send({
+            status: false,
+            message: "Fill all remaining field"
+        })
+    }
+
+    try {
+        const employee = await Employee.findOne({email: email})
+        if (employee) {
+            return res.send({
+                status: false,
+                message: "Employee already registered"
+            })
+        }
+
+        const empObj = { name, email, phone, salary, designation }
+        const newEmployee = await Employee.create(empObj)
+        if (newEmployee){
+            return res.send({
+                status: true,
+                message: "Employee has been added"
+            })
+        } else{
+            return res.send({
+                status: false,
+                message: "Failed to add employee"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+    }
 }

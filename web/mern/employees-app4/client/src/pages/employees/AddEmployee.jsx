@@ -6,16 +6,19 @@ import InputField from "../../components/InputField.jsx";
 import ActionButton from "../../components/ActionButton.jsx";
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 const AddEmployee = () => {
 
     const { register, handleSubmit } = useForm()
+    const navigate = useNavigate()
 
     const handleAddEmployee = async (data) => {
         try {
             const response = await axios.post(ADD_EMPLOYEE_API, data);
             if (response.data.status == true) {
                 toast.success(response.data.message)
+                navigate("/employees", {replace: true})
             } else {
                 toast.error(response.data.message)
             }
