@@ -1,6 +1,5 @@
 import Employee from "./employee.model.js"
 
-
 export const employees = async (req, res) => {
     try {
         const employees = await Employee.find({})
@@ -11,4 +10,8 @@ export const employees = async (req, res) => {
     } catch (error) {
         console.error(error)
     }
+}
+
+export const addEmployee = async (req, res) => {
+    console.log(req.body)
 }

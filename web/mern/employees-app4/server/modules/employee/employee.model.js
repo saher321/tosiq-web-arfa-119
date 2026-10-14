@@ -21,8 +21,8 @@ const employeeSchema = new mongoose.Schema({
     designation: {
         type: String,
         required: true
-    }
-})
+    },
+}, {timestamps: true})
 
 const Employee = mongoose.model("Employee", employeeSchema)
 

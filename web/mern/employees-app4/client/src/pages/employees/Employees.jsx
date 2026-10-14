@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import WebLayout from "../../layouts/WebLayout";
 import axios from "axios";
 import { EMPLOYEE_API } from "../../utils/apis.js";
-import { Mail, Phone, Wallet } from "lucide-react";
 import EmployeeCard from "../../components/EmployeeCard.jsx";
+import LinkButton from "../../components/LinkButton.jsx";
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
@@ -32,9 +32,7 @@ const Employees = () => {
             <span className="block text-sm">All employees record list</span>
           </div>
           <div>
-            <button className="bg-sky-500 text-white py-2 px-3 rounded-lg shadow cursor-pointer hover:bg-sky-600">
-              Add new employee
-            </button>
+            <LinkButton title="Add new employee" url="/employees/add" />
           </div>
         </div>
         <div className="my-5">
