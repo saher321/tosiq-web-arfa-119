@@ -1,7 +1,28 @@
 import React from "react";
 import { Mail, Phone, Wallet } from "lucide-react";
+import ActionButton from './ActionButton'
+import LinkButton from "./LinkButton";
+import axios from "axios";
+import toast from 'react-hot-toast'
+import { DEL_EMPLOYEE_API } from "../utils/apis";
 
-const EmployeeCard = ({ emp }) => {
+const EmployeeCard = ({ emp, updatedEmployees }) => {
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`${DEL_EMPLOYEE_API}/${id}`)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        updatedEmployees(response.data.employees)
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      
+      toast.error("Internal server error")
+      console.error(error)
+    }
+  }
   return (
     <div className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {/* Header */}
@@ -60,6 +81,13 @@ const EmployeeCard = ({ emp }) => {
             </p>
           </div>
         </div>
+        
+      {/* Divider */}
+      <div className="my-5 border-t border-gray-100" />
+      <div className="flex items-center justify-between">
+        <LinkButton url={`/employees/edit/${emp._id}`} title="Edit" />
+        <ActionButton fn={() => handleDelete(emp._id)} title="Delete" />
+      </div>
       </div>
     </div>
   );

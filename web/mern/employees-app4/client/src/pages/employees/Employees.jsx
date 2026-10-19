@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WebLayout from "../../layouts/WebLayout";
 import axios from "axios";
-import { EMPLOYEE_API } from "../../utils/apis.js";
+import { EMPLOYEES_API } from "../../utils/apis.js";
 import EmployeeCard from "../../components/EmployeeCard.jsx";
 import LinkButton from "../../components/LinkButton.jsx";
 
@@ -10,7 +10,7 @@ const Employees = () => {
 
   const getEmployees = async () => {
     try {
-      const response = await axios.get(EMPLOYEE_API);
+      const response = await axios.get(EMPLOYEES_API);
       if (response.data.status == true) {
         setEmployees(response.data.employees);
       }
@@ -40,7 +40,7 @@ const Employees = () => {
             {employees.map((emp, i) => {
               return (
                 <div key={i} className="col-span-4">
-                  <EmployeeCard emp={emp}/>
+                  <EmployeeCard updatedEmployees={setEmployees} emp={emp}/>
                 </div>
               );
             })}
