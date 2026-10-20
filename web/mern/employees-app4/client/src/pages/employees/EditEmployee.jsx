@@ -1,24 +1,25 @@
 import WebLayout from "../../layouts/WebLayout.jsx";
 import axios from "axios";
-import { ADD_EMPLOYEE_API } from "../../utils/apis.js";
+import { ADD_EMPLOYEE_API, EDT_EMPLOYEE_API } from "../../utils/apis.js";
 import LinkButton from "../../components/LinkButton.jsx";
 import InputField from "../../components/InputField.jsx";
 import ActionButton from "../../components/ActionButton.jsx";
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { useEffect } from "react";
 
 const EditEmployee = () => {
 
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, reset } = useForm()
     const navigate = useNavigate()
+    const { id } = useParams()
 
-    const handleEditEmployee = async (data) => {
+    const getSingleEmployee = async () => {
         try {
-            const response = await axios.post(ADD_EMPLOYEE_API, data);
+            const response = await axios.get(`${EDT_EMPLOYEE_API}/${id}`);
             if (response.data.status == true) {
-                toast.success(response.data.message)
-                navigate("/employees", {replace: true})
+                reset(response.data.employee)
             } else {
                 toast.error(response.data.message)
             }
@@ -27,12 +28,20 @@ const EditEmployee = () => {
         }
     };
 
+    const handleUpdateEmployee = async () => {}
+
+    useEffect(() => {
+        if (id) {
+            getSingleEmployee()
+        }
+    }, [id])
+
     return (
         <WebLayout>
             <div>
                 <div className="flex items-center justify-between">
                     <div>
-                        <span className="block font-bold text-2xl">Edit Employee</span>
+                        <span className="block font-bold text-2xl">Edit Employee - {id}</span>
                         <span className="block text-sm">Fill all the fields</span>
                     </div>
                     <div>
@@ -40,7 +49,7 @@ const EditEmployee = () => {
                     </div>
                 </div>
                 <div className="my-5">
-                    <form onSubmit={handleSubmit(handleEditEmployee)}>
+                    <form onSubmit={handleSubmit(handleUpdateEmployee)}>
                         <div className="grid grid-cols-12 gap-3">
                             <div className="col-span-6">
                                 <label htmlFor="">Name</label>
@@ -83,7 +92,7 @@ const EditEmployee = () => {
                                 />
                             </div>
                             <div className="col-span-12">
-                                <ActionButton title="Add employee" />
+                                <ActionButton title="Update employee" />
                             </div>
                         </div>
                     </form>

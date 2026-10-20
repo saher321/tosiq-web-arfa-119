@@ -9,10 +9,6 @@ const Home = () => {
                 <span className='font-bold'>Information:</span>
                 <p>Welcome back! Admin</p>
             </div>
-
-            <div>
-                dd
-            </div>
         </div>
     </WebLayout>
   )

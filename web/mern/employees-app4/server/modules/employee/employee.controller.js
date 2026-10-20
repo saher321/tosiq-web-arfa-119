@@ -70,3 +70,25 @@ export const deleteEmployee = async (req, res) => {
         console.log(error)
     }
 }
+
+export const editEmployee = async (req, res) => {
+    const { id } = req.params
+    try {
+        const employee = await Employee.findById({_id: id})
+        if (!employee) {
+            return res.send({
+                status: false,
+                message: "Employee not found"
+            })
+        }
+
+        return res.send({
+            status: true,
+            employee
+        })
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}
