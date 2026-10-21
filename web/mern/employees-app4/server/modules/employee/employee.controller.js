@@ -92,3 +92,27 @@ export const editEmployee = async (req, res) => {
         console.log(error)
     }
 }
+
+export const updateEmployee = async (req, res) => {
+    const { _id } = req.body
+    const { name, email, phone, salary, designation } = req.body
+    try {
+        const updatedData = { name, email, phone, salary, designation }
+        const employee = await Employee.findByIdAndUpdate({_id: _id}, updatedData)
+        if (!employee) {
+            return res.send({
+                status: false,
+                message: "Employee not found"
+            })
+        }
+
+        return res.send({
+            status: true,
+            message: "Data has been updated"
+        })
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}

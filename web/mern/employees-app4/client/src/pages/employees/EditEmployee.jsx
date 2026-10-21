@@ -1,6 +1,6 @@
 import WebLayout from "../../layouts/WebLayout.jsx";
 import axios from "axios";
-import { ADD_EMPLOYEE_API, EDT_EMPLOYEE_API } from "../../utils/apis.js";
+import { ADD_EMPLOYEE_API, EDT_EMPLOYEE_API, UPT_EMPLOYEE_API } from "../../utils/apis.js";
 import LinkButton from "../../components/LinkButton.jsx";
 import InputField from "../../components/InputField.jsx";
 import ActionButton from "../../components/ActionButton.jsx";
@@ -28,7 +28,20 @@ const EditEmployee = () => {
         }
     };
 
-    const handleUpdateEmployee = async () => {}
+    const handleUpdateEmployee = async (data) => {
+        console.log(data)
+        try {
+            const response = await axios.put(`${UPT_EMPLOYEE_API}`, data);
+            if (response.data.status == true) {
+                toast.success(response.data.message)
+                navigate("/employees", {replace: true})
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     useEffect(() => {
         if (id) {
