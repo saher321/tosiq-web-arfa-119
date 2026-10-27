@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthLayout from '../../layouts/AuthLayout'
 import { ActionButton, Divider, InputField, SelectField } from '../../components/MainLib'
 import { ROLES } from '../../utils/common.js'
 import { Link } from 'react-router'
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Register = () => {
+  const [loading, setLoading] = useState(false)
+  const { register, handleSubmit } = useForm()
+
+  const handleRegister = async (data) => {
+    try {
+      setLoading(true)
+      const response = await axios.post("", data)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        // redirect towards login page
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <AuthLayout>
       <div>
@@ -14,26 +34,26 @@ const Register = () => {
             Give details to access dashboard
           </p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit(handleRegister)}>
           <div className='grid grid-cols-12'>
             <div className='col-span-12'>
               <label htmlFor=''>Full name</label>
-              <InputField type='text' hint={"John Doe"} />
+              <InputField { ...register("fullName") } type='text' hint={"John Doe"} />
             </div>
             <div className='col-span-12'>
               <label htmlFor=''>Email</label>
-              <InputField type='email' hint={"john.doe@email.com"} />
+              <InputField { ...register("email") } type='email' hint={"john.doe@email.com"} />
             </div>
             <div className='col-span-12'>
               <label htmlFor=''>Password</label>
-              <InputField type='password' hint={"xxxxxxxx"} />
+              <InputField { ...register("password") } type='password' hint={"xxxxxxxx"} />
             </div>
             <div className='col-span-12'>
               <label htmlFor=''>Role</label>
-              <SelectField data={ROLES}/>
+              <SelectField { ...register("role") } data={ROLES}/>
             </div>
             <div className="col-span-12">
-              <ActionButton text={"Register"} />
+              <ActionButton loading={loading} text={"Register"} />
             </div>
           </div>
         </form>

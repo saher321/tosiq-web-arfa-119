@@ -8,7 +8,7 @@ const AuthLayout = ({children}) => {
         <div className='text-[#359FA0] p-5 italic font-bold'>
             {APP_NAME_LC}
         </div>
-          <div className='my-10 max-w-md'>
+          <div className='my-10 max-w-md mx-auto'>
               {/* forms: login, signup, etc */}
               {children}
         </div>
