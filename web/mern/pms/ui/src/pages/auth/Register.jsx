@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AuthLayout from '../../layouts/AuthLayout'
 import { ActionButton, Divider, InputField, SelectField } from '../../components/MainLib'
 import { ROLES } from '../../utils/common.js'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -10,6 +10,7 @@ import toast from 'react-hot-toast'
 const Register = () => {
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit } = useForm()
+  const navigate = useNavigate()
 
   const handleRegister = async (data) => {
     try {
@@ -18,6 +19,7 @@ const Register = () => {
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
+        navigate("/auth/login", {replace: true})
       }
     } catch (error) {
       console.log(error)
@@ -29,7 +31,7 @@ const Register = () => {
     <AuthLayout>
       <div>
         <div className='my-3 mb-5'>
-          <h1 className='text-2xl font-bold'>Register your self</h1>
+          <h1 className='text-2xl font-bold'>Register yourself</h1>
           <p className='italic text-gray-500'>
             Give details to access dashboard
           </p>
@@ -60,7 +62,8 @@ const Register = () => {
         <Divider />
         <div>
           <p>
-            Already have an account? <Link className='text-blue-600'>Login</Link>
+            Already have an account? 
+            <Link to={"/auth/login"} className='text-blue-600'> Login</Link>
           </p>
         </div>
       </div>
