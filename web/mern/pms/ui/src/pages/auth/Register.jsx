@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { REGISTER_API } from '../../utils/apis.js'
 
 const Register = () => {
   const [loading, setLoading] = useState(false)
@@ -15,11 +16,13 @@ const Register = () => {
   const handleRegister = async (data) => {
     try {
       setLoading(true)
-      const response = await axios.post("", data)
+      const response = await axios.post(REGISTER_API, data)
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
         navigate("/auth/login", {replace: true})
+      } else {
+        toast.error(response.data.message)
       }
     } catch (error) {
       console.log(error)
