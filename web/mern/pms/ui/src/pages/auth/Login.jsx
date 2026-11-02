@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
 import AuthLayout from '../../layouts/AuthLayout.jsx'
-import { ActionButton, Divider, InputField, SelectField } from '../../components/MainLib.jsx'
-import { ROLES } from '../../utils/common.js'
-import { Link } from 'react-router'
+import { ActionButton, Divider, InputField } from '../../components/MainLib.jsx'
+import { Link, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { LOGIN_API } from '../../utils/apis.js'
 
 const Login = () => {
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit } = useForm()
+  const navigate = useNavigate()
 
   const handleLogin = async (data) => {
     try {
       setLoading(true)
-      const response = await axios.post("", data)
+      const response = await axios.post(LOGIN_API, data)
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
+        navigate("/", {replace: true}) // dashboard url
+      } else {
+        toast.error(response.data.message)
       }
     } catch (error) {
       console.log(error)
