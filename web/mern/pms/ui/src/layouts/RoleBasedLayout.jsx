@@ -43,7 +43,7 @@ const RoleBasedLayout = ({children}) => {
                     </nav>
                 </div>
                 <div className="p-3 rounded-full shadow">
-                    <button onClick={handleLogout} className='bg-white shadow hover:bg-red-600 hover:text-white rounded-full p-2 '>
+                    <button onClick={handleLogout} className='bg-white hover:bg-red-600 hover:text-white p-2 '>
                         <LogOut size={16} />
                     </button>
                 </div>
