@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login'
 import Dashboard from './pages/Dashboard'
+import ForgotPassword from './pages/auth/ForgotPassword'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         {/* auth routes */}
         <Route path='/auth/register' element={<Register />} />
         <Route path='/auth/login' element={<Login />} />
+        <Route path='/auth/forgot-password' element={<ForgotPassword />} />
 
         <Route path='/' element={<Dashboard />} />
       </Routes>

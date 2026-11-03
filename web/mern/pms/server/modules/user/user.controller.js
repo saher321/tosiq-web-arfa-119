@@ -1,3 +1,4 @@
+import { generateOtp, sendEmail } from "../../utils/common.js";
 import User from "./user.model.js"
 import bcrypt from "bcryptjs";
 
@@ -78,3 +79,49 @@ export const login = async (req, res) => {
         console.log(error)
     }
 }
+
+export const forgotPassword = async (req, res) => {
+    const { email } = req.body
+    if (!email) {
+        return res.send({ status: false, message: "Provide valid email" })
+    }
+
+    try {
+        const user = await User.findOne({email: email})
+        if (!user) {
+            return res.send({
+                status: false,
+                message: "Is this email is correct?"
+            })
+        }
+        
+        const otp = generateOtp()
+        user.otp = otp
+        const subject = "PMS: Reset password otp is"
+        const content = `
+        <strong> Hi, ${user.fullName} </strong> <br />
+        <p> This is your <strong> ${otp} </strong> </p>
+        <small> Note: Don't share this otp </small>
+        `
+        const status = sendEmail(user.email, subject, content)
+        if (status == true) {
+            user.save()
+            return res.send({
+                status: true,
+                message: "Otp has been sent to your email"
+            })
+        } else {
+            return res.send({
+                status: false,
+                message: "Failed to send email"
+            })
+        }
+
+        // console.log("OTP:", otp)
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const resetPassword = async (req, res) => {}

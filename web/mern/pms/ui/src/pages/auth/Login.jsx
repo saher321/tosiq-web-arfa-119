@@ -48,8 +48,9 @@ const Login = () => {
               <label htmlFor=''>Password</label>
               <InputField { ...register("password") } type='password' hint={"xxxxxxxx"} />
             </div>
-            <div className="col-span-12">
+            <div className="col-span-12 flex items-center justify-between">
               <ActionButton loading={loading} text={"Login"} />
+              <Link to="/auth/forgot-password" className='text-sm text-blue-600 hover:underline'>Forgot password?</Link>
             </div>
           </div>
         </form>
