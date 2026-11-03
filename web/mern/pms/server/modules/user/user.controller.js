@@ -100,11 +100,11 @@ export const forgotPassword = async (req, res) => {
         const subject = "PMS: Reset password otp is"
         const content = `
         <strong> Hi, ${user.fullName} </strong> <br />
-        <p> This is your <strong> ${otp} </strong> </p>
+        <p> This is your <strong> ${otp} </strong> otp </p>
         <small> Note: Don't share this otp </small>
         `
-        const status = sendEmail(user.email, subject, content)
-        if (status == true) {
+        const status = await sendEmail(user.email, subject, content)
+        if (status) {
             user.save()
             return res.send({
                 status: true,
@@ -124,4 +124,5 @@ export const forgotPassword = async (req, res) => {
         console.log(error)
     }
 }
+
 export const resetPassword = async (req, res) => {}
