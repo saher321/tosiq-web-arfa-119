@@ -135,6 +135,7 @@ export const resetPassword = async (req, res) => {
         const user = await User.findOne({email: email})
         if (!user) {
             return res.send({
+                status: false,
                 message: "Is this email is correct?"
             })
         }

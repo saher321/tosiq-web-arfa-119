@@ -112,5 +112,8 @@
 2 Nov, 2026 (login api integration)
 	- https://www.youtube.com/watch?v=tkpFhinUP8g
 
-3, Nov, 2026 (forgot password api integration, possible reset screen)
+3 Nov, 2026 (forgot password api integration, possible reset screen)
 	- https://www.youtube.com/watch?v=cs48mV30iqI
+
+11 Nov, 2026 (reset api integration)
+	- https://www.youtube.com/watch?v=Wxbw1r4smeI
