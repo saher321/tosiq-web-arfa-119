@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import { LOGIN_API } from '../../utils/apis.js'
+import { RESET_PASSWORD_API } from '../../utils/apis.js'
 
 const ResetPassword = () => {
   const [loading, setLoading] = useState(false)
@@ -15,11 +15,16 @@ const ResetPassword = () => {
   const handleResetPassword = async (data) => {
     try {
       setLoading(true)
-      const response = await axios.post(LOGIN_API, data)
+      const newData = { 
+        email: localStorage.getItem("email"), 
+        otp: data.otp,
+        newPassword: data.newPassword
+      }
+      const response = await axios.post(RESET_PASSWORD_API, newData)
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
-        navigate("/", {replace: true}) // dashboard url
+        navigate("/auth/login", {replace: true}) // dashboard url
       } else {
         toast.error(response.data.message)
       }
@@ -42,7 +47,7 @@ const ResetPassword = () => {
           <div className='grid grid-cols-12'>
             <div className='col-span-12'>
               <label htmlFor=''>OTP</label>
-              <InputField { ...register("OTP") } type='email' hint={"12345678"} />
+              <InputField { ...register("otp") } type='text' hint={"12345678"} />
             </div>
             <div className='col-span-12'>
               <label htmlFor=''>New password</label>

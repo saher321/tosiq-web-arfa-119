@@ -125,4 +125,40 @@ export const forgotPassword = async (req, res) => {
     }
 }
 
-export const resetPassword = async (req, res) => {}
+export const resetPassword = async (req, res) => {
+    const { email, otp, newPassword } = req.body
+    if (!otp || !newPassword) {
+        return res.send({ status: false, message: "Provide remaining fields" })
+    }
+
+    try {
+        const user = await User.findOne({email: email})
+        if (!user) {
+            return res.send({
+                message: "Is this email is correct?"
+            })
+        }
+        
+        const isOtpCorrect = user.otp == otp ? true : false
+        if (!isOtpCorrect) {
+            return res.send({
+                status: false,
+                message: "Given otp is not valid"
+            })
+        } else {
+            user.otp = null
+            user.isOtpVerified = true
+            user.save()
+            return res.send({
+                status: true,
+                message: "Password has been reset"
+            })
+        }
+
+        // console.log("OTP:", otp)
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}
