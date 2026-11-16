@@ -117,3 +117,6 @@
 
 11 Nov, 2026 (reset api integration)
 	- https://www.youtube.com/watch?v=Wxbw1r4smeI
+
+16 Nov, 2026 (protected routes, user token, gsm(zustand))
+	- https://www.youtube.com/watch?v=w66YKPNFlG8

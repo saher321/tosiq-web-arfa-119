@@ -16,10 +16,11 @@ const Login = () => {
     try {
       setLoading(true)
       const response = await axios.post(LOGIN_API, data)
+      console.log(response.data)
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
-        navigate("/", {replace: true}) // dashboard url
+        // navigate("/", {replace: true}) // dashboard url
       } else {
         toast.error(response.data.message)
       }

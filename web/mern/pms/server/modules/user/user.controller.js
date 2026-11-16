@@ -1,6 +1,9 @@
 import { generateOtp, sendEmail } from "../../utils/common.js";
 import User from "./user.model.js";
 import bcrypt from "bcryptjs";
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const register = async (req, res) => {
   const { fullName, email, password, role } = req.body;
@@ -60,11 +63,19 @@ export const login = async (req, res) => {
     }
 
     // checking password from db
+    const loggedInUser = { id: user._id, name: user.fullName, role: user.role }
     const result = await bcrypt.compare(password, user.password);
-    console.log(result);
+    const token = jwt.sign(
+      loggedInUser, 
+      process.env.JWT_SECRET_KEY, 
+      { expiresIn: '1d' }
+    )
+
     if (result) {
       return res.send({
         status: true,
+        token,
+        loggedInUser,
         message: "User loggedin successfull",
       });
     } else {
