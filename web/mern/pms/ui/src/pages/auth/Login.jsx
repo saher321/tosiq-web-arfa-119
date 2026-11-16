@@ -6,11 +6,13 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { LOGIN_API } from '../../utils/apis.js'
+import { useAuth } from '../../store/useAuth.js'
 
 const Login = () => {
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit } = useForm()
   const navigate = useNavigate()
+  const login = useAuth(state => state.login)
 
   const handleLogin = async (data) => {
     try {
@@ -20,7 +22,8 @@ const Login = () => {
       if (response.data.status == true) {
         toast.success(response.data.message)
         // redirect towards login page
-        // navigate("/", {replace: true}) // dashboard url
+        login(response.data.loggedInUser, response.data.token)
+        navigate("/", {replace: true}) // dashboard url
       } else {
         toast.error(response.data.message)
       }

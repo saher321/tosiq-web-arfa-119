@@ -14,16 +14,16 @@ const App = () => {
       <Routes>
 
         {/* auth routes */}
-        {/* <Route element={<AuthRoutes />}> */}
+        <Route element={<AuthRoutes />}>
           <Route path='/auth/register' element={<Register />} />
           <Route path='/auth/login' element={<Login />} />
           <Route path='/auth/forgot-password' element={<ForgotPassword />} />
           <Route path='/auth/reset-password' element={<ResetPassword />} />
-        {/* </Route> */}
+        </Route>
 
-        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Dashboard />} />
-        {/* </Route> */}
+        </Route>
 
       </Routes>
     </BrowserRouter>

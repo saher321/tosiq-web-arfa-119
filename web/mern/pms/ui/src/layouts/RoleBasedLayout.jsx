@@ -3,7 +3,10 @@ import { APP_NAME_UC } from '../utils/common'
 import { BriefcaseBusiness, ListTodo, LogOut, Users, UsersRound } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router'
 import toast from 'react-hot-toast'
+import { useAuth } from '../store/useAuth'
 const RoleBasedLayout = ({children}) => {
+
+    const logout = useAuth(state => state.logout)
 
     const navigate = useNavigate()
 
@@ -16,7 +19,8 @@ const RoleBasedLayout = ({children}) => {
 
     const handleLogout = async () => {
         toast.success("Account has been loggedout")
-        navigate("/auth/login", {replace: true})
+        logout()
+        // navigate("/auth/login", {replace: true})
     }
     
     return (
