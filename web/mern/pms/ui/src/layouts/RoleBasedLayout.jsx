@@ -8,8 +8,6 @@ const RoleBasedLayout = ({children}) => {
 
     const logout = useAuth(state => state.logout)
 
-    const navigate = useNavigate()
-
     const links = [
         { url: "/customers", text: "Customers", icon: Users},
         { url: "/projects", text: "Projects", icon: BriefcaseBusiness},
