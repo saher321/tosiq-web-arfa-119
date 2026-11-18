@@ -2,6 +2,7 @@ import express from 'express'
 import userRouter from './modules/user/user.routes.js'
 import cors from 'cors'
 import connectDB from './config/db.js'
+import customerRouter from './modules/customer/customer.routes.js'
 
 
 const app = express()
@@ -14,6 +15,7 @@ const PREFIX = '/api/v1'
 
 
 app.use(PREFIX, userRouter)
+app.use(PREFIX, customerRouter)
 
 app.get("/check", (req, res) => {
     return res.send({

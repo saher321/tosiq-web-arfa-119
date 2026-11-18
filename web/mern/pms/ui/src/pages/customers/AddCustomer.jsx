@@ -2,13 +2,33 @@ import React, { useState } from 'react'
 import RoleBasedLayout from '../../layouts/RoleBasedLayout'
 import { ActionButton, InputField, LinkButton } from '../../components/MainLib'
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router'
+import { ADD_CUSTOMER_API } from '../../utils/apis.js'
 
 const AddCustomer = () => {
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit } = useForm()
+  const navigate = useNavigate()
 
   const handleAddCustomer = async (data) => {
-    console.log(data)
+    try {
+      console.log(data)
+      setLoading(true)
+      const response = await axios.post(ADD_CUSTOMER_API, data)
+      console.log(response)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        navigate("/customers", {replace: true})
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

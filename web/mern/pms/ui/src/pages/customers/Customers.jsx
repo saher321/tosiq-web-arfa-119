@@ -2,27 +2,33 @@
 import React from 'react'
 import RoleBasedLayout from '../../layouts/RoleBasedLayout'
 import { LinkButton } from '../../components/MainLib'
+import { useEffect } from 'react'
+import toast from 'react-hot-toast'
+import axios from 'axios'
+import { CUSTOMERS_API } from '../../utils/apis'
+import { useState } from 'react'
 
 const Customers = () => {
 
-    const customers = [
-        {
-            id: 1,
-            name: 'Ali Ahmed',
-            email: 'ali@example.com',
-            phone: '+92 300 1234567',
-            address: 'Lahore, Pakistan',
-            joined: 'Nov 10, 2026',
-        },
-        {
-            id: 2,
-            name: 'Usman Khan',
-            email: 'usman@example.com',
-            phone: '+92 321 7654321',
-            address: 'NY, USA',
-            joined: 'Nov 12, 2026',
-        },
-    ]
+    const [ customers, setCustomers ] = useState([])
+    
+    const getAllCustomers = async () => {
+        try {
+            const response = await axios.get(CUSTOMERS_API)
+            if (response.data.status == true) {
+                setCustomers(response.data.customers)
+            } else {
+                toast.error("Failed to fetch data")
+            }
+        } catch (error) {
+            toast.error("Internal server error")
+            console.log("Error:", error)
+        }
+    }
+
+    useEffect(() => {
+        getAllCustomers()
+    }, [])
 
     return (
         <RoleBasedLayout>
@@ -62,18 +68,18 @@ const Customers = () => {
 
                             <tbody className="divide-y divide-gray-100">
 
-                                {customers.map((customer) => (
+                                {customers.map((customer, i) => (
                                     <tr
-                                        key={customer.id}
+                                        key={i}
                                         className="hover:bg-gray-50 transition"
                                     >
                                         <td className="px-6 py-4 text-gray-500">
-                                            {customer.id}
+                                            {i+1}
                                         </td>
 
                                         <td className="px-6 py-4">
                                             <div className="font-medium text-gray-900">
-                                                {customer.name}
+                                                {customer.fullName}
                                             </div>
                                             <div className="text-gray-500 text-xs mt-1">
                                                 {customer.email}
@@ -81,11 +87,11 @@ const Customers = () => {
                                         </td>
 
                                         <td className="px-6 py-4 text-gray-600">
-                                            {customer.phone}
+                                            {customer.contact}
                                         </td>
 
                                         <td className="px-6 py-4 text-gray-600">
-                                            {customer.joined}
+                                            {customer.joinedDate}
                                         </td>
 
                                         <td className="px-6 py-4 text-gray-600">

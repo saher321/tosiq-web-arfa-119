@@ -1,7 +1,7 @@
 import React from 'react'
 import { APP_NAME_UC } from '../utils/common'
 import { BriefcaseBusiness, ListTodo, LogOut, Users, UsersRound } from 'lucide-react'
-import { Link, NavLink, useNavigate } from 'react-router'
+import { Link, NavLink } from 'react-router'
 import toast from 'react-hot-toast'
 import { useAuth } from '../store/useAuth'
 const RoleBasedLayout = ({children}) => {
