@@ -1,3 +1,6 @@
+import { Link } from "react-router"
+
+
 export const InputField = ({ type = "text", hint, ...othersProp }) => {
 
     return (
@@ -38,6 +41,19 @@ export const ActionButton = ({ loading = false, text, ...othersProp }) => {
         cursor-pointer bg-gray-900 text-gray-50 py-2 px-3 
         rounded hover:shadow-lg hover:bg-gray-950"
         >{loading ? "Please wait, loading..." : text}</button>
+    )
+}
+
+export const LinkButton = ({ text, url, className, ...othersProp }) => {
+    return (
+        <Link
+        { ...othersProp }
+        to={url}
+        className="bg-teal-800 py-2 px-4 rounded-full text-white"
+        >
+
+        {text}
+        </Link>
     )
 }
 

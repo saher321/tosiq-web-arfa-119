@@ -7,6 +7,9 @@ import ForgotPassword from './pages/auth/ForgotPassword'
 import ResetPassword from './pages/auth/ResetPassword'
 import AuthRoutes from './utils/AuthRoutes'
 import ProtectedRoutes from './utils/ProtectedRoutes'
+import Customers from './pages/customers/Customers'
+import AddCustomer from './pages/customers/AddCustomer'
+import EditCustomer from './pages/customers/EditCustomer'
 
 const App = () => {
   return (
@@ -23,6 +26,12 @@ const App = () => {
 
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Dashboard />} />
+
+          {/* customer routes */}
+          <Route path='/customers/' element={<Customers />} />
+          <Route path='/customers/add' element={<AddCustomer />} />
+          <Route path='/customers/edit' element={<EditCustomer />} />
+
         </Route>
 
       </Routes>

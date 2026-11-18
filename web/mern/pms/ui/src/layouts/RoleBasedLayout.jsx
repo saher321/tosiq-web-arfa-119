@@ -1,7 +1,7 @@
 import React from 'react'
 import { APP_NAME_UC } from '../utils/common'
 import { BriefcaseBusiness, ListTodo, LogOut, Users, UsersRound } from 'lucide-react'
-import { NavLink, useNavigate } from 'react-router'
+import { Link, NavLink, useNavigate } from 'react-router'
 import toast from 'react-hot-toast'
 import { useAuth } from '../store/useAuth'
 const RoleBasedLayout = ({children}) => {
@@ -26,15 +26,19 @@ const RoleBasedLayout = ({children}) => {
     return (
         <div className='max-w-6xl mx-auto my-5'>
             <div className='flex items-center justify-between'>
-                <div className="p-3 rounded-full shadow text-teal-800 italic font-bold">{APP_NAME_UC}</div>
+                <div className="p-3 rounded-full shadow text-teal-800 italic font-bold"><Link to={'/'}>{APP_NAME_UC}</Link></div>
                 <div className="p-3 rounded-full shadow">
                     <nav className="flex gap-5">
                         {
                             links.map((link, i) => {
                                 const Icon = link.icon
                                 return (
-                                    <NavLink key={i}
-                                    className="flex items-center gap-2 hover:bg-teal-800 p-2 rounded-full hover:text-white"
+                                    <NavLink key={i} to={link.url}
+
+                                    className={({ isActive }) => isActive ? 
+                                    'flex items-center gap-2 py-2 px-4 rounded-full text-white bg-teal-800' : 
+                                    'flex items-center gap-2 hover:bg-teal-800 py-2 px-4 rounded-full hover:text-white'
+                                    }
                                     >
                                         <Icon size={20}/>
                                         <span>
